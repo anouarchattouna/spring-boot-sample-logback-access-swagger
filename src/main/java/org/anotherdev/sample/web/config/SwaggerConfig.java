@@ -13,10 +13,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * This is a sample configuration for enabling api documentation generation with swagger.</br>
- * 
- * @see <a href="http://springfox.github.io/springfox/docs/current/#dependencies">Springfox-swagger2 with Spring MVC and
- * Spring Boot</a>
  * 
  * @author Anouar
  *
@@ -25,7 +21,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-  @Value("${application.version:}")
+  @Value("${application.version}")
   private String applicationVersion;
 
   // @formatter:off
@@ -33,7 +29,7 @@ public class SwaggerConfig {
     public Docket sampleApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .useDefaultResponseMessages(false)
-                .groupName("employees-api")
+                .groupName("sample-api")
                 .apiInfo(apiInfo())
                 .select()
                 .paths(regex("/api.*"))
