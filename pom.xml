@@ -13,7 +13,11 @@
 
 	<groupId>org.anotherdev</groupId>
 	<artifactId>spring-boot-sample-logback-access-swagger</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
+	
+	<properties>
+		<springfox.swagger2.version>2.5.0</springfox.swagger2.version>
+	</properties>
 
 	<dependencies>
 		<!-- Spring Boot Starters dependencies -->
@@ -25,18 +29,18 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-access</artifactId>
-			<!-- The managed version is 1.1.7 The artifact is managed in org.springframework.boot:spring-boot-dependencies:1.4.1.RELEASE -->
+			<!-- The managed version is 1.1.7 The artifact is managed in org.springframework.boot:spring-boot-dependencies:1.4.2.RELEASE -->
 		</dependency>
 			<!-- Springfox Swagger2 -->
 			<dependency>
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger2</artifactId>
-				<version>2.6.1</version>
+				<version>${springfox.swagger2.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger-ui</artifactId>
-				<version>2.6.1</version>
+				<version>${springfox.swagger2.version}</version>
 			</dependency>
 	</dependencies>
 	<build>
