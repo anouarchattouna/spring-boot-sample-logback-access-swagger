@@ -1,6 +1,7 @@
 package org.anotherdev.sample.web.rest.v1;
 
 import java.time.OffsetDateTime;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,9 +15,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiParam;
 
 /**
  * @author Anouar
@@ -41,6 +44,14 @@ public class SampleController {
 
   @RequestMapping(value = "/ping1", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Sample> ping1() {
+    Sample sample = new Sample(sampleService.getClientCountry(), OffsetDateTime.now().toString());
+    LOGGER.info(sample.toString());
+    return new ResponseEntity<Sample>(sample, HttpStatus.OK);
+  }
+  
+    @RequestMapping(value = "/ping2", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Sample> ping2(@ApiParam(value = "String countryName", required = false) @RequestParam("countryName") final String countryName,
+    @ApiParam(value = "Optional String optionalCountryName", required = false) @RequestParam("optionalCountryName") final Optional<String> optionalCountryName) {
     Sample sample = new Sample(sampleService.getClientCountry(), OffsetDateTime.now().toString());
     LOGGER.info(sample.toString());
     return new ResponseEntity<Sample>(sample, HttpStatus.OK);
