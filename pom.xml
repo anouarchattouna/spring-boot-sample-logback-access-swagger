@@ -7,16 +7,16 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
+		<version>1.5.3.RELEASE</version>
 		<relativePath />
 	</parent>
 
 	<groupId>org.anotherdev</groupId>
 	<artifactId>spring-boot-sample-logback-access-swagger</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	
 	<properties>
-		<springfox.swagger2.version>2.5.0</springfox.swagger2.version>
+		<springfox.swagger2.version>2.7.0</springfox.swagger2.version>
 	</properties>
 
 	<dependencies>
