@@ -16,7 +16,7 @@
 	<version>0.0.3-SNAPSHOT</version>
 	
 	<properties>
-		<springfox.swagger2.version>2.7.0</springfox.swagger2.version>
+		<springfox.swagger2.version>2.5.0</springfox.swagger2.version>
 	</properties>
 
 	<dependencies>
